@@ -1,0 +1,10 @@
+# You can use this:
+deploy:
+  type: git
+  repo: https://github.com/innoseon/innoseon.github.io.git
+  branch: main
+  message: [message]
+  name: innoseon
+  email: innoseon@gmail.com
+  ignore_hidden: false # default is true
+  ignore_pattern: regexp  # whatever file that matches the regexp will be ignored when deploying
