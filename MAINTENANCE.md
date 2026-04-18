@@ -4,6 +4,51 @@
 当前技术栈：**Hexo 7 + Icarus 6 主题 + GitHub Pages**
 本地仓库：`~/codebase/innoseon.github.io/`
 
+> **核心约定**（Hexo 的"文件夹即规则"）
+>
+> - `source/_posts/<slug>.md` → 会上线
+> - `source/_drafts/<slug>.md` → **不会上线**（只本地可预览）
+> - 平时自己写用「直写法」（下面一节）；和 Claude 协作用「草稿法」（第二节）
+
+---
+
+## 〇、直写法（最简，自己写时用）
+
+1. **新建文件** `source/_posts/<slug>.md`（`<slug>` 是 URL 里那一段，用英文/拼音，别用中文）：
+
+   ```bash
+   cd ~/codebase/innoseon.github.io
+   npx hexo new "我的笔记"               # 自动建 source/_posts/我的笔记.md，含 frontmatter
+   # 或手写：vim source/_posts/my-note.md
+   ```
+
+2. **顶部 frontmatter 至少写这几行**：
+
+   ```yaml
+   ---
+   title: 标题（可以中文）
+   date: 2026-04-20
+   tags: [杂记]
+   ---
+   ```
+
+3. **本地预览一下**（可选但推荐）：
+
+   ```bash
+   npx hexo server
+   # 浏览器 http://localhost:4000/
+   ```
+
+4. **推上线**：
+
+   ```bash
+   git add .
+   git commit -m "post: <slug 或中文标题>"
+   git push
+   ```
+
+push 完 CI 自动构建 + 部署，~1 分钟后 <https://innoseon.github.io/> 上线新文。
+
 ---
 
 ## 一、协作写作流程（Claude 起草 → 你审查 → 你发布）
