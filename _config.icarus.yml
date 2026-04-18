@@ -229,11 +229,11 @@ widgets:
         position: left
         type: profile
         # Author name
-        author: seon
+        author: innoseon
         # Author title
-        author_title: 
+        author_title:
         # Author's current location
-        location: Shanghai, China
+        location:
         # URL or path to the avatar image
         avatar: 
         # Whether show the rounded avatar image
